@@ -1,0 +1,16 @@
+{
+    "name": "vid/filko",
+    "autoload": {
+        "psr-4": {
+            "Filko\\": "src/"
+        },
+        "files" : ["public/Bootstrap.php"]
+    },
+    "authors": [
+        {
+            "name": "Vid Bukovec",
+            "email": "vid.bukovec8361@gmail.com"
+        }
+    ],
+    "require": {}
+}
