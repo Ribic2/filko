@@ -1,8 +1,20 @@
-<html>
-    <body>
-        <form>
-            <input id = "username" placeholder="Username">
-            <input id = "password" placeholder="Password">
-        </form>
-    </body>
-</html>
+<?php
+
+use Filko\Render\View;
+
+?>
+
+<body>
+<fieldset id="files" tabindex="0">
+    <h1>Files at /home/testuser</h1>
+    <?php
+    foreach ($data as $file) {
+        View::getComponent("files.phtml", ["data" => $file]);
+    }
+    ?>
+
+    <div id="command-line">
+        <p class="text"></p>
+    </div>
+</fieldset>
+</body>

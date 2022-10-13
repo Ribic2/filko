@@ -1,0 +1,32 @@
+*{
+    background-color: black;
+    color: white;
+    font-family: 'VT323', monospace;
+    margin: 0;
+    padding: 0;
+}
+.file{
+    border: solid 1px white;
+    height: 50px;
+    margin: 10px;
+    display: flex;
+    width: 50%;
+}
+.file>h1{
+    margin: 3px
+}
+.delete-button{
+    color: red;
+    height: 50px;
+    width: 50px;
+}
+
+#context-menu{
+    height: 300px;
+    width: 150px;
+    background-color: white;
+}
+
+#files{
+    height: 100%;
+}

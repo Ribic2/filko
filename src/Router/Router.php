@@ -3,22 +3,39 @@
 namespace Filko\Router;
 
 use Exception;
+use Filko\Helpers\Includer;
 
 class Router
 {
     /**
-     * @return void
+     * @return Route
      * @throws Exception
      */
-    public static function getRoute(): void
+    public static function getRoute(): Route
     {
         $path = $_SERVER['REQUEST_URI'];
+        $method = $_SERVER['REQUEST_METHOD'];
 
-        if(!isset(Paths::PATHS[$path])){
-            throw new Exception("Route not found!");
+        // Path is exploded by '?' because if GET param is set in the URL
+        // it doesn't map it correctly
+        $path = explode("?", $path)[0];
+
+        $splitPath = explode('/', $path);
+
+        // TODO Better checkup for child routes
+        // Checks for child route
+        $route = isset($splitPath[2]) ?
+            Paths::PATHS[sprintf("/%s", $splitPath[1])]
+            [$method]["children"]
+            [sprintf("/%s", $splitPath[2])] :
+            Paths::PATHS[$path][$method];
+
+        if (!isset($route)) {
+            header("Status: 404 Not Found");
         }
 
-        $route = new Route(Paths::PATHS[$path]);
-        $route->run();
+        return new Route(
+            $route
+        );
     }
 }
