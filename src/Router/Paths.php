@@ -14,8 +14,9 @@ class Paths
                 "action" => 'index',
                 "method" => 'GET',
                 "config" => [
-                    "test" => "test.css",
-                    "index" => "index.js"
+                    "test.txt" => "test.txt.css",
+                    "index" => "index.js",
+                    "files" => "components/File.js"
                 ],
                 "children" => [
 

@@ -26,6 +26,17 @@ class ComposerStaticInit31e8586ca93562af90f748a753dbaa7e
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Filko\\Client' => __DIR__ . '/../..' . '/src/Client.php',
+        'Filko\\Controller\\Controller' => __DIR__ . '/../..' . '/src/Controller/Controller.php',
+        'Filko\\Controller\\IndexController' => __DIR__ . '/../..' . '/src/Controller/IndexController.php',
+        'Filko\\Enum\\Ftp' => __DIR__ . '/../..' . '/src/Enum/Ftp.php',
+        'Filko\\Enum\\Helper' => __DIR__ . '/../..' . '/src/Enum/Helper.php',
+        'Filko\\Helpers\\Env' => __DIR__ . '/../..' . '/src/Helpers/Env.php',
+        'Filko\\Helpers\\Includer' => __DIR__ . '/../..' . '/src/Helpers/Includer.php',
+        'Filko\\Render\\View' => __DIR__ . '/../..' . '/src/Render/View.php',
+        'Filko\\Router\\Paths' => __DIR__ . '/../..' . '/src/Router/Paths.php',
+        'Filko\\Router\\Route' => __DIR__ . '/../..' . '/src/Router/Route.php',
+        'Filko\\Router\\Router' => __DIR__ . '/../..' . '/src/Router/Router.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

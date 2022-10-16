@@ -4,6 +4,7 @@ namespace Filko\Controller;
 
 use Exception;
 use Filko\Client;
+use Filko\Helpers\Formator;
 use Filko\Render\View;
 
 class IndexController extends Controller
@@ -14,7 +15,10 @@ class IndexController extends Controller
     public function index(): void
     {
         $client = Client::getInstance();
-        View::render("index.phtml", ["data" => $client->getFiles()]);
+        View::render("index.phtml", [
+            "data" => Formator::formatFolders($client->getFiles()),
+            "dir" => $client->getCurrentDirectory()
+        ]);
     }
 
     public function about()

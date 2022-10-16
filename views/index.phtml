@@ -1,20 +1,17 @@
-<?php
-
-use Filko\Render\View;
-
-?>
-
 <body>
-<fieldset id="files" tabindex="0">
-    <h1>Files at /home/testuser</h1>
+<fieldset id="files" tabindex="0" class="container">
+    <h1><?= $dir ?></h1>
     <?php
-    foreach ($data as $file) {
-        View::getComponent("files.phtml", ["data" => $file]);
+    foreach ($data as $parent_file => $files) {
+        echo "<folder-element data-filename='$parent_file'></folder-element>";
+        //View::getComponent("files.phtml", ["parent_file" => $parent_file, "files" => $files]);
     }
     ?>
-
-    <div id="command-line">
-        <p class="text"></p>
+    <folder-element data-filename='$parent_file'></folder-element>
+    <div id="command-line" class="fixed inset-x-0 bottom-0">
+        <p>
+            ?><span class="text"></span>
+        </p>
     </div>
 </fieldset>
 </body>

@@ -1,8 +1,11 @@
-<div class="file">
+<div class="file columns-1 border-solid border-2 border-indigo-600">
     <h1>
-        <?php echo $data ?>
+        <?php var_dump($parent_file) ?>
     </h1>
-    <button class="delete-button" data-file-name=<?= $data ?>>
+    <p>
+        <?php var_dump($files) ?>
+    </p>
+    <button class="delete-button" data-file-name=''>
         Delete
     </button>
 </div>
