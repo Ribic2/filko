@@ -18,7 +18,12 @@ class Includer
             $splitItem = end($itemArray);
 
             if ($splitItem === Helper::JAVASCRIPT_EXTENSION) {
-                echo sprintf("<script src='./assets/javascript/%s' type='module' defer></script>", $item);
+                if(str_contains($item, "component")){
+                    echo sprintf("<script src='./assets/javascript/%s' defer='true'></script>", $item);
+                }
+                else{
+                    echo sprintf("<script src='./assets/javascript/%s' type='module'></script>", $item);
+                }
             } else {
                 echo sprintf("<link rel='stylesheet' type='text/css' href='./assets/css/%s'></link >", $item);
             }

@@ -1,26 +1,4 @@
 *{
-    background-color: black;
-    color: white;
-    font-family: 'VT323', monospace;
     margin: 0;
     padding: 0;
-}
-.file{
-
-}
-
-.delete-button{
-    color: red;
-    height: 50px;
-    width: 50px;
-}
-
-#context-menu{
-    height: 300px;
-    width: 150px;
-    background-color: white;
-}
-
-#files{
-    height: 100%;
 }

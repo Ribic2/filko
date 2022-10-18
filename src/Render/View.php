@@ -46,4 +46,29 @@ class View
         echo htmlentities(json_encode($data), true);
         exit;
     }
+
+    public static function filesTable(array $items = [])
+    {
+        foreach ($items as $item => $values) {
+            $parent = $item;
+            $isSingleFile = 0;
+
+            if (is_numeric($item)) {
+                $parent = $values;
+                $isSingleFile = 1;
+            }
+
+            echo sprintf("<folder-element 
+                data-parent-file='%s'
+                data-children-files='%s'
+                data-is-single-file='%s'
+                >
+             
+                </folder-element>",
+                $parent,
+                $isSingleFile ? '' : json_encode($values),
+                $isSingleFile
+            );
+        }
+    }
 }

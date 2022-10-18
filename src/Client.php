@@ -54,6 +54,11 @@ class Client
     {
         $files = ftp_nlist($this->connection, $folder);
 
+        if(count($files) == 0){
+            $this->items[] = $folder;
+            return -1;
+        }
+
         foreach ($files as $file) {
             if ($this->isDir($file)) {
                 $this->getFiles($file);
